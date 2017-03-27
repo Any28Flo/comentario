@@ -2,21 +2,28 @@
 function actualiza() {
     var x = document.getElementById("comentarios").value;
     document.getElementById("preview").innerHTML =  x;
-  //  document.getElementById("comentarios").innerHTML = val;
+    console.log(x);
 }
-function textoGrande(){
+function textoGrande(input){
 
   var  texto= document.getElementById("preview");
   // La etiqueta fontSize tiene valores predeterminados como
   //Checar la liga https://developer.mozilla.org/es/docs/Web/CSS/font-size
 
-  texto.style.fontSize ="xx-large" ;
+  texto.style.fontSize ="xx-large";
   return texto;
-  console.log(texto.value);
+  console.log(input);
   //return texto;
 
 //  texto.style.color="blue";
 
+}
+function enviarComentario(){
+  var contenedordeComentario= document.getElementById("agregar");
+  var preview = document.getElementById("preview");
+  var nuevNodo = preview.cloneNode(true);
+  nuevNodo.id=Date.now();
+  contenedordeComentario.appendChild(nuevNodo);
 }
 // Nota el tamaño mediano es el tamaño por defecto por lo cual no se
 //nota la diferentcia :3
@@ -59,11 +66,13 @@ function agregaComentario(){
 
 }
 function agregar() {
-  var texto= document.getElementById("preview");
-  var capa= document.getElementById("agregar");
-  var comentario = document.getElementById("p");
-  comentario.innerHTML= texto;
-  capa.appendChild(comentario);
+  var contenerdor= document.getElementById("agregar");
+  var preview = document.getElementById("preview");
+  var fontSize= preview.style.fontSize;
+  var nuevocom = document.createElement("seccion");
+  nuevocom.style.fontSize=fontSize
+  nuevocom.innerText = preview.innerText;
+  nuevocom.appendChild(nuevocom);
 }
 
 

@@ -6,7 +6,7 @@
   </head>
   <body background="img/background.png">
     <!-- CREO EL ENCABEZADO DEL BLOG -->
-    <header>ARTICULOS </header>
+    <header style="font-size: 50 px ; color: blue">ARTICULOS </header>
     <!--BARRA DE NAVEGACION  -->
     <br>
     <br>
@@ -14,10 +14,7 @@
     <!-- Para denotar la entrada del blog -->
     <article id="agregar">
       <!-- lista de los comentarios -->
-      <ol id="listaComentarios">
-        <li>Comentario1</li>
-        <li >Comentario2</li>
-      </ol>
+
       <img id="comFoto"> </img>
     </article>
     <!-- Para dividir la seccion donnde se van a previsualizar los comentarios -->
@@ -27,7 +24,7 @@
       <!--Area especifica para dejar los comentarios  -->
       <table>
         <tr>
-          <th><input type="button" value="Texto grande" onclick="textoGrande(); "></th>
+          <th><input type="button" value="Texto grande" onclick="textoGrande(this.value); "></th>
           <th><input type="button" value="Texto mediano" onclick="textoMediano();"></th>
           <th><input type="button" value="Texto chico" onclick="textoPeque();"></th>
           <th><input type="button" value="Color de fondo" onclick="colorFondo();"></th>
@@ -49,7 +46,7 @@
 
       <p id="preview"></p>
 
-      <input type="button" value="Enviar" align="left" onclick="agregaComentario();">
+      <input type="button" value="Enviar" align="left" onclick="enviarComentario();">
       <input type="button" value="Eliminar" align="left" onclick="eliminar();">
       <input type="button" value="Foto" id="foto" onclick="foto();">
 
